@@ -1,14 +1,14 @@
-package Collecciones;
+package Ejercicio_Book_HashMap;
 
-import java.util.HashMap;
+
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class HasnMap {
+public class HashMap {
 
     public static void main(String[ ] args) {
 
-        HashMap<String, Float> listaProductos = new HashMap<>( ); //Declaración
+        java.util.HashMap<String, Float> listaProductos = new java.util.HashMap<>( ); //Declaración
         Scanner sc = new Scanner(System.in); //objeto sc para lectura en consola
         int opcionElegida = 0;
         float precio;
@@ -51,14 +51,15 @@ public class HasnMap {
             System.out.println("\n");
         }
     }//Fin del main
-    public static void guardarProducto(String codigo, float precio, HashMap<String,Float> listaProductos) {
+
+    public static void guardarProducto(String codigo, float precio, java.util.HashMap<String,Float> listaProductos) {
         if (listaProductos.containsKey(codigo)) { //No permite duplicados
             System.out.println("Imposible introducir el producto. El código repetido.");
         } else {
             listaProductos.put(codigo, precio);//Guarda el producto en el    HashMap
         }
     }
-    public static void modicaPrecio(String codigo, HashMap<String, Float>  listaProductos) {
+    public static void modicaPrecio(String codigo, java.util.HashMap<String, Float> listaProductos) {
         Scanner sc = new Scanner(System.in);
         if (listaProductos.containsKey(codigo)) {
             System.out.println("Introduce el nuevo precio del producto:");
@@ -67,7 +68,8 @@ public class HasnMap {
             System.out.println("No hay ningun producto con ese código.");
         }
     }
-    public static void mostrarProductos(HashMap<String, Float> listaProductos)
+
+    public static void mostrarProductos(java.util.HashMap<String, Float> listaProductos)
     {
         String clave;
         Iterator<String> productos = listaProductos.keySet( ).iterator( );
@@ -78,14 +80,14 @@ public class HasnMap {
             System.out.println(clave + "\t " + listaProductos.get(clave));
         }
     }
-    public static void eliminaProducto(String codigo, HashMap<String, Float> listaProductos) {
+
+    public static void eliminaProducto(String codigo, java.util.HashMap<String, Float> listaProductos) {
         if (listaProductos.containsKey(codigo)) {
             listaProductos.remove(codigo);
         } else {
             System.out.println("No hay ningun producto con ese código.");
         }
     }
-} 
 
 
-
+}
